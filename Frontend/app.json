@@ -1,0 +1,72 @@
+{
+  "expo": {
+    "name": "MetaForensics",
+    "slug": "metaforensicsapplication",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo.png",
+    "scheme": "metaforensics",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.example.finalyearproject",
+      "adaptiveIcon": {
+        "backgroundColor": "#1a1a2e",
+        "foregroundImage": "./assets/images/logo.png"
+      },
+      "permissions": [
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.VIBRATE"
+      ],
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "usesCleartextTraffic": true
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/logo.png"
+    },
+    "plugins": [
+      "expo-router",
+      "./plugins/withNetworkSecurityConfig.js",
+      "@react-native-google-signin/google-signin",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/logo.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#1a1a2e",
+          "dark": {
+            "backgroundColor": "#1a1a2e"
+          }
+        }
+      ],
+      "expo-web-browser"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "66338a13-8bff-408a-8612-82c986db787f"
+      },
+      "firebase": {
+        "apiKey": "AIzaSyCiPSIFzAJebh7Y11ViQW9rEfxdBmukkis",
+        "authDomain": "meta-forensics-fcb9e.firebaseapp.com",
+        "databaseURL": "https://meta-forensics-fcb9e-default-rtdb.firebaseio.com",
+        "projectId": "meta-forensics-fcb9e",
+        "storageBucket": "meta-forensics-fcb9e.firebasestorage.app",
+        "messagingSenderId": "527632750781",
+        "appId": "1:527632750781:web:14c614dfa3dd839abd7fd4",
+        "measurementId": "G-1CY5284D4B"
+      }
+    },
+    "owner": "kishanmali25"
+  }
+}
