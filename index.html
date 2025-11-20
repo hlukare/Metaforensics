@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google Search - Person Info</title>
+</head>
+<body>
+  <h2>Search Person Info</h2>
+  <input type="text" id="query" placeholder="Enter person name">
+  <button onclick="searchPerson()">Search</button>
+
+  <div id="results"></div>
+
+  <script>
+    // IMPORTANT: Never hardcode API keys in frontend code
+    // These should be fetched from a backend API endpoint
+    // For now, this file requires a backend proxy to work securely
+    
+    async function searchPerson() {
+      const query = document.getElementById("query").value;
+      if (!query) {
+        alert("Please enter a search query");
+        return;
+      }
+
+      try {
+        // Call your backend API instead of Google API directly
+        const response = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
+        const data = await response.json();
+
+        let output = "<h3>Results:</h3>";
+        if (data.items && data.items.length > 0) {
+          data.items.forEach(item => {
+            output += `
+              <p>
+                <a href="${item.link}" target="_blank">${item.title}</a><br>
+                ${item.snippet}
+              </p>
+            `;
+          });
+        } else {
+          output = "<p>No results found.</p>";
+        }
+
+        document.getElementById("results").innerHTML = output;
+      } catch (error) {
+        console.error("Search error:", error);
+        document.getElementById("results").innerHTML = "<p>Error performing search. Please try again.</p>";
+      }
+    }
+  </script>
+</body>
+</html>
