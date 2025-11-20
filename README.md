@@ -1,17 +1,7 @@
-# intel-Tracker
+# MetaForensics
 
 OSINT Investigation Tool
 A comprehensive Open Source Intelligence (OSINT) tool for gathering personal information from multiple sources including social media, public records, government databases, and digital footprints.
-
-## ⚠️ Security Notice
-
-**IMPORTANT:** Before pushing to GitHub:
-
-1. ✅ All secrets are now stored in `.env` file (which is gitignored)
-2. ✅ Never commit the `.env` file - use `.env.example` as a template
-3. ✅ All API keys and credentials have been removed from source code
-4. ⚠️ Review your commit history to ensure no secrets were committed previously
-5. 📖 See `SETUP.md` for complete environment setup instructions
 
 ## Features
 Multi-source data collection from social media, public records, and databases
